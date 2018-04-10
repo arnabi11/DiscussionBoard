@@ -2,25 +2,35 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
-import "./main.less";
 
-Template.message.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-Template.add.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-// Template.hello.helpers({
-//   counter() {
-//     return Template.instance().counter.get();
-//   },
-// });
+Template.message.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('messages')
+})
 
-// Template.hello.events({
-//   'click button'(event, instance) {
-//     // increment the counter when button is clicked
-//     instance.counter.set(instance.counter.get() + 1);
-//   },
-// });
+
+Template.registerHelper('formatDate', function (date) {
+  return moment(date).format('DD/MM/YYY')
+})
+
+Template.message.helpers({
+  messages: function () {
+    return Messages.find({}, { sort: { createAt: -1 } })
+  }
+})
+
+
+Template.add.events({
+  'submit #messageForm'(event) {
+    event.preventDefault();
+    const target = event.target;
+    const text = target.text.value;
+
+    Meteor.call('messages.insert', text)
+    return false;
+  }
+});
+Template.message.events({
+  'dblclick .messageText'() {
+    Meteor.call('message.remove', 'this._id')
+  }
+})

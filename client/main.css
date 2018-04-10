@@ -1,122 +1,106 @@
-.body {
-  margin: 0rem;
-  padding: 0rem;
+/* CSS declarations go here */
+
+body {
+    margin: 0px;
+    padding: 0px;
 }
-.mainContainer {
-  position: absolute;
-  top: 0rem;
-  left: 0rem;
-  height: 100%;
-  width: 100%;
-  background: #ecece6;
-  overflow: hidden;
+
+.messageContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
-.mainContainer .header {
-  position: absolute;
-  height: 10rem;
-  width: 100%;
-  background: #3b135c;
+
+.header {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    top: 0%;
+    background: red;
 }
-.mainContainer .header .pic {
-  position: absolute;
-  left: 0rem;
-  width: 9rem;
-  height: 10rem;
-  background: #38235f;
+
+.contentContainer {
+    position: absolute;
+    top: 10%;
+    bottom: 15%;
+    width: 100%;
+    overflow: auto;
 }
-.mainContainer .header .logout {
-  position: relative;
-  float: right;
-  height: 10rem;
-  width: 7rem;
-  background: #604d83;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #ffffff;
-  line-height: 10rem;
+
+.contentContainer .message {
+    position: relative;
+    float: left;
+    min-height: 15%;
+    width: 93%;
+    background: green;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    border-top-right-radius: 46px;
+    border-bottom-left-radius: 46px;
 }
-.mainContainer .body {
-  position: absolute;
-  top: 10rem;
-  bottom: 10rem;
-  width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  box-sizing: border-box;
-  background: #43176d;
+
+.contentContainer .message .name {
+    position: relative;
+    float: left;
+    height: 3rem;
+    width: 100%;
+    font-size: 2rem;
+    text-indent: 1rem;
+    text-transform: uppercase;
+    border-top-right-radius: 46px;
+    line-height: 3rem;
 }
-.mainContainer .body .prevMsg {
-  position: relative;
-  left: 1rem;
-  min-height: 10rem;
-  padding: 10px;
-  border: 0.1rem solid gray;
-  margin-top: 3rem;
-  font-size: 1.5rem;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  margin-left: .8rem;
+
+.contentContainer .message .text {
+    position: relative;
+    float: left;
+    min-height: 6rem;
+    width: 95%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-size: 2.5rem;
 }
-.mainContainer .body .prevMsg .profilePic {
-  position: absolute;
-  top: 2rem;
-  height: 4rem;
-  width: 4rem;
-  border-radius: 50%;
-  left: -2rem;
-  background: #43176d;
-  border: 0.1rem solid gray;
+
+.contentContainer .message .date {
+    position: relative;
+    float: right;
+    height: 4rem;
+    width: auto;
+    margin-right: 2rem;
+    margin-top: 2rem;
 }
-.mainContainer .body .prevMsg .chat {
-  position: relative;
-  float: left;
-  margin-left: 3rem;
-  height: 8rem;
-  max-width: 28rem;
-  min-width: 28rem;
+
+.textBox {
+    position: absolute;
+    height: 15%;
+    bottom: 0%;
+    width: 100%;
 }
-.mainContainer .body .prevMsg .time {
-  position: relative;
-  float: right;
-  height: 2rem;
-  width: 10rem;
-  margin: .4rem;
-  background: #ffffff;
+
+.textBox .messageForm {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
-.mainContainer .footer {
-  position: absolute;
-  height: 10rem;
-  width: 100%;
-  bottom: 0rem;
-  background: white;
+
+.textBox .messageForm .newMessage {
+    position: absolute;
+    top: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+    width: 80%;
+    outline: none;
+    border: 5px solid #f0c517;
+    font-size: 2rem;
 }
-.mainContainer .footer .msg {
-  position: relative;
-  float: left;
-  height: 10rem;
-  width: 75%;
-}
-.mainContainer .footer .msg .textArea {
-  height: 10rem;
-  width: 25rem;
-}
-.mainContainer .footer .btn {
-  position: relative;
-  float: right;
-  width: 25%;
-  height: 10rem;
-}
-.mainContainer .footer .btn .button {
-  position: relative;
-  left: 50%;
-  height: 4rem;
-  top: 50%;
-  width: 6rem;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  border-radius: 0.5rem;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 4rem;
-  font-weight: bold;
+
+.textBox .messageForm .btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    transform: translateY(-50%);
 }

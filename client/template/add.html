@@ -1,6 +1,8 @@
 <template name="add">
-    <form id="messageForm">
-        <input type="text" class="userName">
-        <button>hello</button>
+    {{#if currentUser}}
+    <form id="messageForm" class="messageForm">
+        <textarea name="text" class="newMessage"></textarea>
+        <button type="submit" class="btn">submit</button>
     </form>
+    {{/if}}
 </template>
