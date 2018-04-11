@@ -18,6 +18,9 @@ Template.message.helpers({
   }
 })
 
+function showMessage() {
+  $('.messageContainer').show()
+}
 
 Template.add.events({
   'submit #messageForm'(event) {
